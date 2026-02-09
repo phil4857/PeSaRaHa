@@ -1,0 +1,17 @@
+from database import SessionLocal
+from models import User, Reward, Referral
+
+def platform_report():
+    db = SessionLocal()
+    total_users = db.query(User).count()
+    total_credits = sum([r.credits for r in db.query(Reward).all()])
+    total_referrals = db.query(Referral).count()
+    db.close()
+    return {
+        "total_users": total_users,
+        "total_credits": total_credits,
+        "total_referrals": total_referrals
+    }
+
+if __name__ == "__main__":
+    print(platform_report())
