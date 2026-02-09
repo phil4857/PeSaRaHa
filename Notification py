@@ -1,0 +1,5 @@
+import requests
+
+def send_notification(phone, message):
+    # Placeholder for Twilio / WhatsApp
+    print(f"Sending message to {phone}: {message}")
