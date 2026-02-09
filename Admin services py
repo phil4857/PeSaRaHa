@@ -1,0 +1,5 @@
+def pause_rewards():
+    print("Daily rewards paused")
+
+def adjust_reward(amount):
+    print(f"Daily reward changed to {amount}")
